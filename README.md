@@ -131,9 +131,9 @@ stock-market-sentiment-analysis/
 
 ## 👤 Author
 
-Muhammad Sohaib
-BS - Computer Science  
-Semester Project | Course: Artificial Intelligence
-COMSATS University Islamabad, Vehari Campus
-Email: [sp22-bcs-057@cuivehari.edu.pk](mailto:sp22-bcs-057@cuivehari.edu.pk)
+Muhammad Sohaib  
+BS - Computer Science    
+Semester Project | Course: Artificial Intelligence  
+COMSATS University Islamabad, Vehari Campus  
+Email: [sp22-bcs-057@cuivehari.edu.pk](mailto:sp22-bcs-057@cuivehari.edu.pk)  
 
