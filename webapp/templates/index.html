@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market Sentiment Analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f4f6f8 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: #1a237e;
+            color: white;
+            padding: 22px 0 13px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(26,35,126,0.12);
+        }
+        .header h1 {
+            margin: 0 0 7px 0;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin: 3px 0;
+            font-size: 1.01em;
+        }
+        .container {
+            width: 90%;
+            max-width: 520px;
+            background: white;
+            margin: 36px auto 0 auto;
+            padding: 30px 28px 24px 28px;
+            box-shadow: 0px 8px 32px rgba(60,80,180,0.13);
+            border-radius: 14px;
+            min-height: 320px;
+        }
+        label {
+            font-size: 1.09em;
+            font-weight: 500;
+            color: #23235a;
+        }
+        textarea {
+            width: 100%;
+            height: 110px;
+            padding: 13px;
+            resize: vertical;
+            border-radius: 6px;
+            border: 1px solid #bfc7d3;
+            font-size: 1.05em;
+            margin-top: 7px;
+            margin-bottom: 13px;
+            transition: border-color 0.2s;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #1a237e;
+            background: #f3f7fc;
+        }
+        button {
+            margin-top: 5px;
+            padding: 12px;
+            width: 100%;
+            background: linear-gradient(90deg,#3546a8 60%,#2196f3 100%);
+            color: white;
+            font-size: 1.13em;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.07);
+            transition: background 0.23s;
+        }
+        button:hover {
+            background: linear-gradient(90deg,#2a3571 40%,#1769aa 100%);
+        }
+        .result {
+            margin-top: 26px;
+            padding: 19px;
+            text-align: center;
+            font-size: 1.23em;
+            border-radius: 7px;
+            box-shadow: 0 2px 10px rgba(26,35,126,0.09);
+            background: #f8fafd;
+            animation: fadeIn 0.6s;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(22px);}
+            to   {opacity: 1; transform: none;}
+        }
+        .badge {
+            display: inline-block;
+            font-size: 1.09em;
+            font-weight: 600;
+            padding: 5px 16px;
+            border-radius: 99px;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+        .positive {
+            background: #d1f5df;
+            color: #097c4a;
+            border: 1.5px solid #30c97d;
+        }
+        .negative {
+            background: #ffe5ec;
+            color: #b10e3b;
+            border: 1.5px solid #f74a70;
+        }
+        @media (max-width:600px) {
+            .container {
+                padding: 17px 5vw 20px 5vw;
+            }
+        }
+        .footer {
+            text-align: center;
+            color: #9da3b9;
+            font-size: 0.97em;
+            margin: 36px 0 13px 0;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            document.getElementById("text").focus();
+        };
+        // Optional: Ctrl+Enter submits the form
+        document.addEventListener('DOMContentLoaded', function() {
+            var textarea = document.getElementById('text');
+            if(textarea) {
+                textarea.addEventListener('keydown', function (e) {
+                    if (e.ctrlKey && e.key === 'Enter') {
+                        this.form.submit();
+                    }
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Stock Market Sentiment Analysis</h1>
+        <p><b>Course:</b> Artificial Intelligence (CSC462)</p>
+        <p><b>Project Title:</b> Stock Market Sentiment Analysis Using Machine Learning</p>
+        <p><b>Student Name:</b> Muhammad Sohaib &nbsp; | &nbsp; <b>Registration No:</b> CIIT/SP22-BCS-057/VHR</p>
+        <p><b>COMSATS University Islamabad, Vehari Campus</b></p>
+    </div>
+
+    <div class="container">
+        <form method="POST" autocomplete="off">
+            <label for="text">Enter stock market-related text:</label>
+            <textarea name="text" id="text" placeholder="Type your sentence...">{{ input_text }}</textarea>
+            <button type="submit">Analyze Sentiment</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                Sentiment:
+                {% if prediction == 'Positive' %}
+                    <span class="badge positive">Positive</span>
+                {% elif prediction == 'Negative' %}
+                    <span class="badge negative">Negative</span>
+                {% else %}
+                    <span class="badge">{{ prediction }}</span>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="footer">
+        &copy; {{ 2025 }} Muhammad Sohaib, Artificial Intelligence Project.
+    </div>
+</body>
+</html>
