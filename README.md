@@ -48,30 +48,24 @@ pip install -r requirements.txt
 
 ### 4. (Optional) Convert Notebook to Python Script (if needed)
 
-The repository currently includes the training code as a Jupyter notebook (`train.ipynb`).  
+The repository currently includes the training code as a Jupyter notebook (`stock_sentiment_analysis.ipynb`).  
 If you prefer to run training from a Python script instead of the notebook, you can convert it using the following command:
 
 ```bash
-jupyter nbconvert --to script train.ipynb
+jupyter nbconvert --to script stock_sentiment_analysis.ipynb
 ```
 
-This will generate a `train.py` file which you can then run directly:
+This will generate a `stock_sentiment_analysis.py` file which you can then run directly:
 
 ```bash
-python train.py
+python stock_sentiment_analysis.py
 ```
+
+This will preprocess data, train multiple models, evaluate them, and save the best TF-IDF model and vectorizer in the `webapp/` folder.
 
 Otherwise, you can simply open and run the notebook cells in Jupyter or any compatible environment.
 
 ## ▶️ Running the Project
-
-### Train models and generate deployment files:
-
-```bash
-python train.py
-```
-
-This will preprocess data, train multiple models, evaluate them, and save the best TF-IDF model and vectorizer in the `webapp/` folder.
 
 ### Run the Flask web application:
 
@@ -90,15 +84,15 @@ Open your browser and visit:
 ```
 stock-market-sentiment-analysis/
 │
-├── stock_data.csv          # Input dataset (financial news headlines + sentiment labels)
-├── train.py                # Training and evaluation script (from .ipynb converted to .py)
-├── requirements.txt        # Python dependencies
+├── stock_data.csv                # Input dataset (financial news headlines + sentiment labels)
+├── stock_sentiment_analysis.py   # Training and evaluation script (from .ipynb converted to .py)
+├── requirements.txt              # Python dependencies
 ├── webapp/                 
-│   ├── app.py              # Flask web app for deployment
-│   ├── model_tfidf.pkl     # Saved TF-IDF sentiment classification model
-│   ├── vectorizer_tfidf.pkl# Saved TF-IDF vectorizer
-│   └── ...                 # Additional saved artifacts
-└── README.md               # Project documentation
+│   ├── app.py                    # Flask web app for deployment
+│   ├── model_tfidf.pkl           # Saved TF-IDF sentiment classification model
+│   ├── vectorizer_tfidf.pkl      # Saved TF-IDF vectorizer
+│   └── ...                       # Additional saved artifacts
+└── README.md                     # Project documentation
 ```
 
 ---
