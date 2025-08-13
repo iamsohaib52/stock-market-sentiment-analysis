@@ -1,0 +1,1 @@
+web: gunicorn stock_sentiment_app:app
