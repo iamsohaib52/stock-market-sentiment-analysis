@@ -71,7 +71,7 @@ Otherwise, you can simply open and run the notebook cells in Jupyter or any comp
 
 ```bash
 cd webapp
-python app.py
+python stock_sentiment_app.py
 ```
 
 Open your browser and visit:
@@ -88,7 +88,7 @@ stock-market-sentiment-analysis/
 ├── stock_sentiment_analysis.py   # Training and evaluation script (from .ipynb converted to .py)
 ├── requirements.txt              # Python dependencies
 ├── webapp/                 
-│   ├── app.py                    # Flask web app for deployment
+│   ├── stock_sentiment_app.py    # Flask web app for deployment
 │   ├── model_tfidf.pkl           # Saved TF-IDF sentiment classification model
 │   ├── vectorizer_tfidf.pkl      # Saved TF-IDF vectorizer
 │   └── ...                       # Additional saved artifacts
