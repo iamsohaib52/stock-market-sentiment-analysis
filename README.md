@@ -2,6 +2,8 @@
 
 This project predicts **stock market sentiment** (Positive / Negative) from financial news headlines using **Natural Language Processing (NLP)** and **Machine Learning**.  
 It trains multiple models (Logistic Regression, Naive Bayes, SVM) on **TF-IDF** and **Word2Vec** features, evaluates them, and deploys the best model using **Flask**.
+#### Live Demo
+[Click here to try the app](https://huggingface.co/spaces/sohaib52/stock_sentiment_analysis)
 
 ---
 
@@ -63,7 +65,7 @@ python stock_sentiment_analysis.py
 
 This will preprocess data, train multiple models, evaluate them, and save the best TF-IDF model and vectorizer in the `webapp/` folder.
 
-Otherwise, you can simply open and run the notebook cells in Jupyter or any compatible environment.
+#### Otherwise, you can simply open and run the notebook cells in Jupyter or any compatible environment.
 
 ## ▶️ Running the Project
 
@@ -71,7 +73,7 @@ Otherwise, you can simply open and run the notebook cells in Jupyter or any comp
 
 ```bash
 cd webapp
-python stock_sentiment_app.py
+python app.py
 ```
 
 Open your browser and visit:
@@ -88,7 +90,7 @@ stock-market-sentiment-analysis/
 ├── stock_sentiment_analysis.py   # Training and evaluation script (from .ipynb converted to .py)
 ├── requirements.txt              # Python dependencies
 ├── webapp/                 
-│   ├── stock_sentiment_app.py    # Flask web app for deployment
+│   ├── app.py                    # Flask web app for deployment
 │   ├── model_tfidf.pkl           # Saved TF-IDF sentiment classification model
 │   ├── vectorizer_tfidf.pkl      # Saved TF-IDF vectorizer
 │   └── ...                       # Additional saved artifacts
