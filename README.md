@@ -1,7 +1,7 @@
 # Stock Market Sentiment Analysis
 
 This project predicts **stock market sentiment** (Positive / Negative) from financial news headlines using **Natural Language Processing (NLP)** and **Machine Learning**.  
-It trains multiple models (Logistic Regression, Naive Bayes, SVM) on **TF-IDF** and **Word2Vec** features, evaluates them, and deploys the best model using **Flask**.
+It trains multiple models (Logistic Regression, Naive Bayes, SVM) on **TF-IDF** and **Word2Vec** features, evaluates them, and deploys the best model using **Flask**.  
 [Live Demonstration](https://huggingface.co/spaces/sohaib52/stock_sentiment_analysis)
 
 ---
